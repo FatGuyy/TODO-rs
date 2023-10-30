@@ -1,9 +1,12 @@
+// Defines enum called Status and Implements a function toggle in it.
 #[derive(Debug, PartialEq)]
 pub enum Status {
     Todo,
     Done,
 }
 
+// Function that toggles between status
+// toggle : It is used to switch the states of the task.
 impl Status {
     pub fn toggle(&self) -> Self {
         match self {
@@ -12,6 +15,7 @@ impl Status {
         }
     }
 }
+
 
 pub fn parse_item(line: &str) -> Option<(Status, &str)> {
     let todo_item = line
